@@ -52,14 +52,3 @@ df = pd.DataFrame(
 
 st.map(df)
 
-from numpy.random import default_rng as rng
-
-df = pd.DataFrame(rng(0).standard_normal((60, 3)), columns=["country", "brand"])
-
-chart = (
-    alt.Chart(df)
-    .mark_circle()
-    .encode(x="country", y="brand", size="brand", color="country", tooltip=["country", "brand"])
-)
-
-st.altair_chart(chart)
